@@ -1,0 +1,15 @@
+{
+  "name": "stagebook",
+  "short_name": "stagebook",
+  "start_url": "stagebook.html",
+  "display": "standalone",
+  "background_color": "#f4f1ed",
+  "theme_color": "#262631",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
