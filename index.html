@@ -1,122 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BASIL | Independent Audio Engineer</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#0d0d0d;
-    color:white;
+
+background:#090909;
+
+overflow-x:hidden;
+
+color:white;
+
 }
 
-header{
-    text-align:center;
-    padding:70px 20px;
+/* Animated Background */
+
+.background{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+overflow:hidden;
+
+z-index:-10;
+
 }
 
-header h1{
-    font-size:60px;
-    letter-spacing:6px;
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:linear-gradient(45deg,#00d4ff,#6d00ff);
+
+filter:blur(120px);
+
+opacity:.28;
+
+animation:float 18s infinite alternate;
+
 }
 
-header h2{
-    color:#9d9d9d;
-    font-weight:400;
-    margin-top:10px;
+.circle:nth-child(1){
+
+width:420px;
+
+height:420px;
+
+left:-120px;
+
+top:-120px;
+
 }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
+.circle:nth-child(2){
+
+width:500px;
+
+height:500px;
+
+right:-180px;
+
+bottom:-120px;
+
+animation-duration:24s;
+
+}
+
+.circle:nth-child(3){
+
+width:300px;
+
+height:300px;
+
+left:45%;
+
+top:35%;
+
+animation-duration:20s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px) translateX(0px);
+
+}
+
+100%{
+
+transform:translateY(-90px) translateX(70px);
+
+}
+
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
+position:relative;
+
+}
+
+.hero-box{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:60px;
+
+border-radius:30px;
+
+box-shadow:0 0 60px rgba(0,0,0,.45);
+
+animation:fadeUp 1.2s;
+
+max-width:900px;
+
+width:95%;
+
+}
+
+.hero h1{
+
+font-size:75px;
+
+letter-spacing:8px;
+
+margin-bottom:15px;
+
+background:linear-gradient(90deg,#00d4ff,#8d5cff,#ffffff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero h2{
+
+font-weight:300;
+
+font-size:28px;
+
+color:#ddd;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+color:#bbb;
+
+line-height:1.8;
+
+max-width:650px;
+
+margin:auto;
+
+margin-bottom:45px;
+
+}
+/* BUTTON */
+
+.btn{
+
+display:inline-block;
+
+padding:18px 45px;
+
+font-size:18px;
+
+font-weight:600;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#00d4ff,#7a3cff);
+
+transition:.35s;
+
+box-shadow:0 0 30px rgba(0,212,255,.35);
+
+}
+
+.btn:hover{
+
+transform:translateY(-6px) scale(1.05);
+
+box-shadow:0 0 45px rgba(0,212,255,.7);
+
+}
+
+/* PORTFOLIO */
+
+section{
+
+padding:120px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#bdbdbd;
+
+margin-bottom:60px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+gap:35px;
+
 }
 
 .card{
-    background:#181818;
-    border-radius:18px;
-    padding:30px;
-    margin-bottom:35px;
-    box-shadow:0 0 30px rgba(255,255,255,.05);
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+padding:35px;
+
+border-radius:28px;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 35px rgba(0,212,255,.2);
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+width:200px;
+
+height:200px;
+
+background:linear-gradient(#00d4ff,#7a3cff);
+
+border-radius:50%;
+
+filter:blur(90px);
+
+opacity:.18;
+
+top:-100px;
+
+right:-100px;
+
 }
 
 .card h3{
-    margin-bottom:20px;
-    font-size:28px;
+
+font-size:28px;
+
+margin-bottom:8px;
+
 }
 
-.track{
-    margin-top:30px;
+.card p{
+
+color:#bdbdbd;
+
+margin-bottom:25px;
+
 }
 
-.track h4{
-    margin-bottom:10px;
-    color:#dddddd;
+.player{
+
+margin-top:20px;
+
 }
 
 audio{
-    width:100%;
+
+width:100%;
+
+border-radius:15px;
+
+filter:invert(1) hue-rotate(180deg);
+
+}
+
+.wave{
+
+display:flex;
+
+justify-content:center;
+
+gap:5px;
+
+margin-bottom:20px;
+
+height:35px;
+
+align-items:flex-end;
+
+}
+
+.wave span{
+
+width:6px;
+
+border-radius:5px;
+
+background:#00d4ff;
+
+animation:wave 1s infinite;
+
+}
+
+.wave span:nth-child(2){
+
+animation-delay:.15s;
+
+}
+
+.wave span:nth-child(3){
+
+animation-delay:.3s;
+
+}
+
+.wave span:nth-child(4){
+
+animation-delay:.45s;
+
+}
+
+.wave span:nth-child(5){
+
+animation-delay:.6s;
+
+}
+
+@keyframes wave{
+
+0%{
+
+height:10px;
+
+}
+
+50%{
+
+height:35px;
+
+}
+
+100%{
+
+height:10px;
+
+}
+
 }
 
 footer{
-    text-align:center;
-    color:#777;
-    padding:40px;
+
+padding:45px;
+
+text-align:center;
+
+color:#999;
+
 }
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(70px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
 </style>
 
 </head>
+
 <body>
 
-<header>
+<div class="background">
+
+<div class="circle"></div>
+
+<div class="circle"></div>
+
+<div class="circle"></div>
+
+</div>
+
+<section class="hero">
+
+<div class="hero-box">
 
 <h1>BASIL</h1>
 
 <h2>Independent Audio Engineer</h2>
 
-</header>
-
-<div class="container">
-
-<div class="card">
-
-<h3>About Me</h3>
-
 <p>
-Welcome to my portfolio.
-Here you can compare the original version with my mixed & mastered version.
+
+Professional Mixing & Mastering Portfolio.<br>
+
+Compare the original mix with the final mastered version.
+
 </p>
 
+<a href="#portfolio" class="btn">
+
+View Portfolio
+
+</a>
+
+</div>
+
+</section><section id="portfolio">
+
+<h2 class="title">
+
+My Portfolio
+
+</h2>
+
+<p class="subtitle">
+
+Listen to the original version and compare it with my final mix & master.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="wave">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+<h3>
+
+🎵 Without Mix
+
+</h3>
+
+<p>
+
+Original recording before processing.
+
+</p>
+
+<div class="player">
+
+<audio controls>
+
+<source src="Saudade Do Teu Beijo (Ohne Mix Master).mp3" type="audio/mpeg">
+
+Your browser does not support audio.
+
+</audio>
+
+</div>
+
 </div>
 
 <div class="card">
 
-<h3>Saudade Do Teu Beijo</h3>
+<div class="wave">
 
-<div class="track">
+<span></span>
 
-<h4>Without Mix & Master</h4>
+<span></span>
 
-<audio controls>
-<source src="Saudade Do Teu Beijo (Ohne Mix Master).mp3" type="audio/mpeg">
-</audio>
+<span></span>
+
+<span></span>
+
+<span></span>
 
 </div>
 
-<div class="track">
+<h3>
 
-<h4>With Mix & Master</h4>
+🎧 With Mix & Master
+
+</h3>
+
+<p>
+
+Professional mix & master by BASIL.
+
+</p>
+
+<div class="player">
 
 <audio controls>
+
 <source src="Saudade Do Teu Beijo (Mix Master).mp3" type="audio/mpeg">
+
+Your browser does not support audio.
+
 </audio>
 
 </div>
@@ -124,6 +609,8 @@ Here you can compare the original version with my mixed & mastered version.
 </div>
 
 </div>
+
+</section>
 
 <footer>
 
@@ -131,5 +618,70 @@ Here you can compare the original version with my mixed & mastered version.
 
 </footer>
 
+<script>
+
+// Fade Animation
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0px)";
+
+}
+
+})
+
+})
+
+document.querySelectorAll(".card").forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(60px)";
+
+card.style.transition=".8s";
+
+observer.observe(card);
+
+});
+
+// Audio Wave Animation
+
+const audios=document.querySelectorAll("audio");
+
+audios.forEach(audio=>{
+
+const wave=audio.closest(".card").querySelector(".wave");
+
+audio.addEventListener("play",()=>{
+
+wave.style.opacity="1";
+
+wave.style.animationPlayState="running";
+
+});
+
+audio.addEventListener("pause",()=>{
+
+wave.style.opacity=".35";
+
+});
+
+audio.addEventListener("ended",()=>{
+
+wave.style.opacity=".35";
+
+});
+
+});
+
+</script>
+
 </body>
+
 </html>
