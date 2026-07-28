@@ -1,24 +1,135 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BASIL | Independent Audio Engineer</title>
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-  <meta http-equiv="refresh" content="0; url=stagebook.html">
+body{
+    background:#0d0d0d;
+    color:white;
+}
 
-  <title>stagebook</title>
+header{
+    text-align:center;
+    padding:70px 20px;
+}
 
-  <script>
-    location.replace('stagebook.html');
-  </script>
+header h1{
+    font-size:60px;
+    letter-spacing:6px;
+}
+
+header h2{
+    color:#9d9d9d;
+    font-weight:400;
+    margin-top:10px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:#181818;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:35px;
+    box-shadow:0 0 30px rgba(255,255,255,.05);
+}
+
+.card h3{
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.track{
+    margin-top:30px;
+}
+
+.track h4{
+    margin-bottom:10px;
+    color:#dddddd;
+}
+
+audio{
+    width:100%;
+}
+
+footer{
+    text-align:center;
+    color:#777;
+    padding:40px;
+}
+</style>
+
 </head>
-
 <body>
-  <p>
-    stagebook wird geöffnet …
-    <a href="stagebook.html">Weiter</a>
-  </p>
+
+<header>
+
+<h1>BASIL</h1>
+
+<h2>Independent Audio Engineer</h2>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h3>About Me</h3>
+
+<p>
+Welcome to my portfolio.
+Here you can compare the original version with my mixed & mastered version.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Saudade Do Teu Beijo</h3>
+
+<div class="track">
+
+<h4>Without Mix & Master</h4>
+
+<audio controls>
+<source src="Saudade Do Teu Beijo (Ohne Mix Master).mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<div class="track">
+
+<h4>With Mix & Master</h4>
+
+<audio controls>
+<source src="Saudade Do Teu Beijo (Mix Master).mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 BASIL • Independent Audio Engineer
+
+</footer>
+
 </body>
 </html>
