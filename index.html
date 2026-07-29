@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>BASIL | Independent Audio Engineer</title>
@@ -22,104 +19,162 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-
-background:#090909;
-
-overflow-x:hidden;
-
+background:#070707;
 color:white;
-
+overflow-x:hidden;
 }
 
 /* Animated Background */
 
-.background{
+body::before{
+
+content:"";
 
 position:fixed;
 
-width:100%;
+width:700px;
+height:700px;
 
-height:100%;
+left:-250px;
+top:-250px;
+
+background:#00c3ff;
+
+filter:blur(180px);
+
+opacity:.25;
+
+animation:move1 12s infinite alternate;
+
+z-index:-3;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+height:700px;
+
+right:-250px;
+bottom:-250px;
+
+background:#6f3cff;
+
+filter:blur(180px);
+
+opacity:.25;
+
+animation:move2 15s infinite alternate;
+
+z-index:-3;
+
+}
+
+@keyframes move1{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(150px,120px);
+
+}
+
+}
+
+@keyframes move2{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-120px,-150px);
+
+}
+
+}
+
+/* NAVBAR */
+
+nav{
+
+position:fixed;
 
 top:0;
 
 left:0;
 
-overflow:hidden;
+width:100%;
 
-z-index:-10;
+padding:25px 8%;
 
-}
+display:flex;
 
-.circle{
+justify-content:space-between;
 
-position:absolute;
+align-items:center;
 
-border-radius:50%;
+background:rgba(0,0,0,.15);
 
-background:linear-gradient(45deg,#00d4ff,#6d00ff);
+backdrop-filter:blur(20px);
 
-filter:blur(120px);
+z-index:999;
 
-opacity:.28;
-
-animation:float 18s infinite alternate;
+border-bottom:1px solid rgba(255,255,255,.05);
 
 }
 
-.circle:nth-child(1){
+.logo{
 
-width:420px;
+font-size:26px;
 
-height:420px;
+font-weight:700;
 
-left:-120px;
-
-top:-120px;
+letter-spacing:3px;
 
 }
 
-.circle:nth-child(2){
+.logo span{
 
-width:500px;
-
-height:500px;
-
-right:-180px;
-
-bottom:-120px;
-
-animation-duration:24s;
+color:#00d4ff;
 
 }
 
-.circle:nth-child(3){
+nav ul{
 
-width:300px;
+display:flex;
 
-height:300px;
+gap:35px;
 
-left:45%;
-
-top:35%;
-
-animation-duration:20s;
+list-style:none;
 
 }
 
-@keyframes float{
+nav a{
 
-0%{
+text-decoration:none;
 
-transform:translateY(0px) translateX(0px);
+color:white;
 
-}
-
-100%{
-
-transform:translateY(-90px) translateX(70px);
+transition:.3s;
 
 }
+
+nav a:hover{
+
+color:#00d4ff;
 
 }
 
@@ -135,45 +190,43 @@ justify-content:center;
 
 align-items:center;
 
-text-align:center;
-
-padding:20px;
-
-position:relative;
+padding:30px;
 
 }
 
 .hero-box{
 
+width:900px;
+
+max-width:95%;
+
 background:rgba(255,255,255,.08);
 
-backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,.12);
 
-border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(20px);
 
-padding:60px;
+padding:70px;
 
-border-radius:30px;
+border-radius:35px;
 
-box-shadow:0 0 60px rgba(0,0,0,.45);
+text-align:center;
 
-animation:fadeUp 1.2s;
+box-shadow:0 0 70px rgba(0,0,0,.5);
 
-max-width:900px;
-
-width:95%;
+animation:fade 1.2s;
 
 }
 
 .hero h1{
 
-font-size:75px;
-
-letter-spacing:8px;
+font-size:82px;
 
 margin-bottom:15px;
 
-background:linear-gradient(90deg,#00d4ff,#8d5cff,#ffffff);
+letter-spacing:8px;
+
+background:linear-gradient(90deg,#00d4ff,#7f5fff,#ffffff);
 
 -webkit-background-clip:text;
 
@@ -187,9 +240,9 @@ font-weight:300;
 
 font-size:28px;
 
-color:#ddd;
+margin-bottom:30px;
 
-margin-bottom:25px;
+color:#d6d6d6;
 
 }
 
@@ -197,258 +250,49 @@ margin-bottom:25px;
 
 font-size:18px;
 
-color:#bbb;
+line-height:1.9;
 
-line-height:1.8;
+color:#bdbdbd;
 
 max-width:650px;
 
 margin:auto;
 
-margin-bottom:45px;
+margin-bottom:50px;
 
 }
-/* BUTTON */
 
-.btn{
+.button{
 
 display:inline-block;
 
-padding:18px 45px;
+padding:18px 50px;
 
-font-size:18px;
-
-font-weight:600;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:50px;
+border-radius:60px;
 
 background:linear-gradient(90deg,#00d4ff,#7a3cff);
 
-transition:.35s;
+text-decoration:none;
 
-box-shadow:0 0 30px rgba(0,212,255,.35);
+color:white;
 
-}
-
-.btn:hover{
-
-transform:translateY(-6px) scale(1.05);
-
-box-shadow:0 0 45px rgba(0,212,255,.7);
-
-}
-
-/* PORTFOLIO */
-
-section{
-
-padding:120px 8%;
-
-}
-
-.title{
-
-text-align:center;
-
-font-size:42px;
-
-margin-bottom:15px;
-
-}
-
-.subtitle{
-
-text-align:center;
-
-color:#bdbdbd;
-
-margin-bottom:60px;
-
-}
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-
-gap:35px;
-
-}
-
-.card{
-
-background:rgba(255,255,255,.08);
-
-border:1px solid rgba(255,255,255,.12);
-
-backdrop-filter:blur(20px);
-
-padding:35px;
-
-border-radius:28px;
+font-weight:600;
 
 transition:.35s;
 
-position:relative;
-
-overflow:hidden;
+box-shadow:0 0 35px rgba(0,212,255,.3);
 
 }
 
-.card:hover{
+.button:hover{
 
-transform:translateY(-10px);
+transform:translateY(-5px) scale(1.05);
 
-box-shadow:0 0 35px rgba(0,212,255,.2);
-
-}
-
-.card::before{
-
-content:"";
-
-position:absolute;
-
-width:200px;
-
-height:200px;
-
-background:linear-gradient(#00d4ff,#7a3cff);
-
-border-radius:50%;
-
-filter:blur(90px);
-
-opacity:.18;
-
-top:-100px;
-
-right:-100px;
+box-shadow:0 0 55px rgba(0,212,255,.7);
 
 }
 
-.card h3{
-
-font-size:28px;
-
-margin-bottom:8px;
-
-}
-
-.card p{
-
-color:#bdbdbd;
-
-margin-bottom:25px;
-
-}
-
-.player{
-
-margin-top:20px;
-
-}
-
-audio{
-
-width:100%;
-
-border-radius:15px;
-
-filter:invert(1) hue-rotate(180deg);
-
-}
-
-.wave{
-
-display:flex;
-
-justify-content:center;
-
-gap:5px;
-
-margin-bottom:20px;
-
-height:35px;
-
-align-items:flex-end;
-
-}
-
-.wave span{
-
-width:6px;
-
-border-radius:5px;
-
-background:#00d4ff;
-
-animation:wave 1s infinite;
-
-}
-
-.wave span:nth-child(2){
-
-animation-delay:.15s;
-
-}
-
-.wave span:nth-child(3){
-
-animation-delay:.3s;
-
-}
-
-.wave span:nth-child(4){
-
-animation-delay:.45s;
-
-}
-
-.wave span:nth-child(5){
-
-animation-delay:.6s;
-
-}
-
-@keyframes wave{
-
-0%{
-
-height:10px;
-
-}
-
-50%{
-
-height:35px;
-
-}
-
-100%{
-
-height:10px;
-
-}
-
-}
-
-footer{
-
-padding:45px;
-
-text-align:center;
-
-color:#999;
-
-}
-
-@keyframes fadeUp{
+@keyframes fade{
 
 from{
 
@@ -468,21 +312,195 @@ transform:translateY(0);
 
 }
 
+/* PORTFOLIO */
+
+section{
+
+padding:120px 8%;
+
+}
+
+.title{
+
+font-size:46px;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#aaaaaa;
+
+margin-bottom:70px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
+gap:35px;.card{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(25px);
+
+border-radius:30px;
+
+padding:35px;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+width:240px;
+
+height:240px;
+
+right:-120px;
+
+top:-120px;
+
+background:linear-gradient(#00d4ff,#7a3cff);
+
+border-radius:50%;
+
+filter:blur(90px);
+
+opacity:.15;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 45px rgba(0,212,255,.18);
+
+}
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+
+.artist{
+
+color:#8edbff;
+
+font-weight:600;
+
+margin-bottom:6px;
+
+}
+
+.engineer{
+
+color:#bbbbbb;
+
+margin-bottom:25px;
+
+}
+
+audio{
+
+width:100%;
+
+margin-top:18px;
+
+border-radius:12px;
+
+}
+
+.divider{
+
+width:100%;
+
+height:1px;
+
+background:rgba(255,255,255,.08);
+
+margin:25px 0;
+
+}
+
+footer{
+
+padding:60px;
+
+text-align:center;
+
+color:#888;
+
+}
+
+@media(max-width:800px){
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.hero-box{
+
+padding:45px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div class="background">
+<nav>
 
-<div class="circle"></div>
+<div class="logo">
 
-<div class="circle"></div>
-
-<div class="circle"></div>
+BASIL<span>.</span>
 
 </div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#portfolio">Portfolio</a></li>
+
+</ul>
+
+</nav>
 
 <section class="hero">
 
@@ -496,11 +514,11 @@ transform:translateY(0);
 
 Professional Mixing & Mastering Portfolio.<br>
 
-Compare the original mix with the final mastered version.
+Compare the original recordings with my final mixes and masters.
 
 </p>
 
-<a href="#portfolio" class="btn">
+<a class="button" href="#portfolio">
 
 View Portfolio
 
@@ -508,17 +526,19 @@ View Portfolio
 
 </div>
 
-</section><section id="portfolio">
+</section>
+
+<section id="portfolio">
 
 <h2 class="title">
 
-My Portfolio
+Featured Projects
 
 </h2>
 
 <p class="subtitle">
 
-Listen to the original version and compare it with my final mix & master.
+Before & After Comparison
 
 </p>
 
@@ -526,93 +546,95 @@ Listen to the original version and compare it with my final mix & master.
 
 <div class="card">
 
-<div class="wave">
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-
 <h3>
 
-🎵 Without Mix
+🎵 Saudade Do Teu Beijo
 
 </h3>
 
+<div class="artist">
+
+Artist • EGDA CAROLYN
+
+</div>
+
+<div class="engineer">
+
+Mix & Master • BASIL
+
+</div>
+
 <p>
 
-Original recording before processing.
+Without Mix
 
 </p>
-
-<div class="player">
 
 <audio controls>
 
 <source src="Saudade Do Teu Beijo (Ohne Mix Master).mp3" type="audio/mpeg">
 
-Your browser does not support audio.
-
 </audio>
 
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="wave">
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-
-<h3>
-
-🎧 With Mix & Master
-
-</h3>
+<div class="divider"></div>
 
 <p>
 
-Professional mix & master by BASIL.
+With Mix & Master
 
 </p>
-
-<div class="player">
 
 <audio controls>
 
 <source src="Saudade Do Teu Beijo (Mix Master).mp3" type="audio/mpeg">
 
-Your browser does not support audio.
+</audio>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎧 Back Down
+
+</h3>
+
+<div class="engineer">
+
+Mix & Master • BASIL
+
+</div>
+
+<p>
+
+Without Mix
+
+</p>
+
+<audio controls>
+
+<source src="Back Down (ohne Mix Master).mp3" type="audio/mpeg">
+
+</audio>
+
+<div class="divider"></div>
+
+<p>
+
+With Mix & Master
+
+</p>
+
+<audio controls>
+
+<source src="Back Down (Mixed Mastered).wav" type="audio/wav">
 
 </audio>
 
 </div>
 
-</div>
-
-</div>
-
-</section>
-
-<footer>
+</div><footer>
 
 © 2026 BASIL • Independent Audio Engineer
 
@@ -620,9 +642,11 @@ Your browser does not support audio.
 
 <script>
 
-// Fade Animation
+// Smooth Fade Animation
 
-const observer = new IntersectionObserver(entries=>{
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries)=>{
 
 entries.forEach(entry=>{
 
@@ -634,47 +658,133 @@ entry.target.style.transform="translateY(0px)";
 
 }
 
-})
+});
 
-})
+},{threshold:.2});
 
-document.querySelectorAll(".card").forEach(card=>{
+cards.forEach(card=>{
 
 card.style.opacity="0";
 
-card.style.transform="translateY(60px)";
+card.style.transform="translateY(70px)";
 
-card.style.transition=".8s";
+card.style.transition="all .8s ease";
 
 observer.observe(card);
 
 });
 
-// Audio Wave Animation
+// Mouse Glow
 
-const audios=document.querySelectorAll("audio");
+const glow=document.createElement("div");
 
-audios.forEach(audio=>{
+glow.style.position="fixed";
 
-const wave=audio.closest(".card").querySelector(".wave");
+glow.style.width="350px";
 
-audio.addEventListener("play",()=>{
+glow.style.height="350px";
 
-wave.style.opacity="1";
+glow.style.borderRadius="50%";
 
-wave.style.animationPlayState="running";
+glow.style.pointerEvents="none";
+
+glow.style.background="radial-gradient(circle, rgba(0,212,255,.18), transparent 70%)";
+
+glow.style.filter="blur(35px)";
+
+glow.style.zIndex="-1";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.left=(e.clientX-175)+"px";
+
+glow.style.top=(e.clientY-175)+"px";
 
 });
 
-audio.addEventListener("pause",()=>{
+// Floating Background Particles
 
-wave.style.opacity=".35";
+for(let i=0;i<25;i++){
+
+let p=document.createElement("span");
+
+p.style.position="fixed";
+
+p.style.width=Math.random()*5+2+"px";
+
+p.style.height=p.style.width;
+
+p.style.background="rgba(255,255,255,.18)";
+
+p.style.borderRadius="50%";
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.top=Math.random()*100+"vh";
+
+p.style.animation=`float${i} ${10+Math.random()*20}s linear infinite`;
+
+document.body.appendChild(p);
+
+let style=document.createElement("style");
+
+style.innerHTML=`
+
+@keyframes float${i}{
+
+0%{
+
+transform:translateY(0px);
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}`;
+
+document.head.appendChild(style);
+
+}
+
+// Card Hover Tilt
+
+cards.forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+
+const y=e.clientY-rect.top;
+
+const rotateY=((x/rect.width)-0.5)*12;
+
+const rotateX=((y/rect.height)-0.5)*-12;
+
+card.style.transform=`perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
 
 });
 
-audio.addEventListener("ended",()=>{
+card.addEventListener("mouseleave",()=>{
 
-wave.style.opacity=".35";
+card.style.transform="perspective(900px) rotateX(0deg) rotateY(0deg)";
 
 });
 
